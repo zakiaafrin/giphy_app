@@ -10,14 +10,14 @@ var results = document.querySelector(".results")
 function getGifs(){
     //console.log("Running getGifs")
     results.innerHTML = ""   //it breaks previous result & shows new result
-    $.ajax({
+    $.ajax({                // '$'means jquery
         type: "GET",
         url: `${giphy_endpoint}/gifs/search?api_key=${API_KEY}&q=${searchInput.value}`,
         dataType: "json",  //get back informatiom from the URL
         success: function(data){
             console.log(data)
             // data[""0""].images.preview_gif.url
-            for(var i=0; i<data.data.length; i++){
+            for(var i=0; i<data.data.length; i++){      //for loop will add image tags INSIDE the results div
                 
                 results.innerHTML += `
                 <img src = "${data.data[i].images.preview_gif.url}" alt="giphy gif " />
@@ -31,7 +31,7 @@ function getGifs(){
     })
 }
 // call our functions and add our event listeners
-searchForm.addEventListener("submit", function(event){
+searchForm.addEventListener("submit", function(event){              //'submit' is the event and the 'event' object holds all the properties related to the event
     event.preventDefault()
    // console.log(searchInput.value)
    getGifs()

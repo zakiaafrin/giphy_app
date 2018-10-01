@@ -5,6 +5,8 @@
 
 body {
     margin: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
 }
 
 h1 {
@@ -30,14 +32,19 @@ form input {
     margin-right: 3px;
     font-size: 18px;
     padding: 10px;
+    border-radius: 15%;
+    outline: none;
 }
 
 form button {
+    background-color: yellow;
     width: 60px;
     font-size: 40px;
     font-weight: bolder;
     padding: 0;
     line-height: .5;
+    border-radius: 15%;
+    outline: none;
 }
 
 .dropdown {
